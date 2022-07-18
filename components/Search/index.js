@@ -1,11 +1,21 @@
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-hooks-web';
 
+
 //import CustomSearchBox from "./CustomSearchBox";
 //import CustomHits from "./CustomHits";
 
 const searchClient = algoliasearch('QJCVSZFZ4X', '71550b670439305fc4af697514f69728');
 
+function Hit({ hit }) {
+    return (
+      <article>
+
+        <h1>{hit.title}</h1>
+
+      </article>
+    );
+  }
 
 export const Search = ({ }) => {
     return (
@@ -21,7 +31,7 @@ export const Search = ({ }) => {
                 resetIcon: 'absolute top-0 right-0 bottom-0 w-6',
                 }}
             />
-            <Hits hitComponent={({ hit }) => hit.title} />
+            <Hits hitComponent={Hit} />
           </InstantSearch>
         </div>
         </section>
