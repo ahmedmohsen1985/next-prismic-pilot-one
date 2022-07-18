@@ -39,7 +39,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Mohsen\\Desktop\\pilot-one\\.slicemachine\\assets\\slices\\ContactForm\\default\\preview.png",
+            "path": "C:\\Users\\Mohsen\\Desktop\\next-prismic-pilot-one\\.slicemachine\\assets\\slices\\ContactForm\\default\\preview.png",
             "width": 800,
             "height": 517
           }
@@ -170,12 +170,12 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Mohsen\\Desktop\\pilot-one\\.slicemachine\\assets\\slices\\Image\\default\\preview.png",
+            "path": "C:\\Users\\Mohsen\\Desktop\\next-prismic-pilot-one\\.slicemachine\\assets\\slices\\Image\\default\\preview.png",
             "width": 800,
             "height": 586
           },
           "wide": {
-            "path": "C:\\Users\\Mohsen\\Desktop\\pilot-one\\.slicemachine\\assets\\slices\\Image\\wide\\preview.png",
+            "path": "C:\\Users\\Mohsen\\Desktop\\next-prismic-pilot-one\\.slicemachine\\assets\\slices\\Image\\wide\\preview.png",
             "width": 800,
             "height": 538
           }
@@ -245,7 +245,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Mohsen\\Desktop\\pilot-one\\.slicemachine\\assets\\slices\\Quote\\default\\preview.png",
+            "path": "C:\\Users\\Mohsen\\Desktop\\next-prismic-pilot-one\\.slicemachine\\assets\\slices\\Quote\\default\\preview.png",
             "width": 800,
             "height": 178
           }
@@ -322,7 +322,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Mohsen\\Desktop\\pilot-one\\.slicemachine\\assets\\slices\\Text\\default\\preview.png",
+            "path": "C:\\Users\\Mohsen\\Desktop\\next-prismic-pilot-one\\.slicemachine\\assets\\slices\\Text\\default\\preview.png",
             "width": 800,
             "height": 489
           }
