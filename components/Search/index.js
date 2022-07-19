@@ -9,11 +9,7 @@ const searchClient = algoliasearch('QJCVSZFZ4X', '71550b670439305fc4af697514f697
 
 function Hit({ hit }) {
     return (
-      <article>
-
-        <h1>{hit.title}</h1>
-
-      </article>
+      <h1>{hit.title}</h1>
     );
   }
 
