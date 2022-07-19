@@ -48,8 +48,8 @@ const Article = ({ article, latestArticles, navigation, settings }) => {
     >
       <Head>
         <title>
-          {prismicH.asText(article.data.title)} | {" "}
-          {prismicH.asText(settings.data.name)}
+          {prismicH.asText(article.data.title)}
+          {/* {prismicH.asText(article.data.title)} | {" "} {prismicH.asText(settings.data.name)} */}
         </title>
       </Head>
       <Bounded>
