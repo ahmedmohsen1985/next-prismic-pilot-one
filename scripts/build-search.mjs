@@ -62,13 +62,15 @@ function transformPostsToSearchObjects(posts) {
         const transformed = transformPostsToSearchObjects(posts);
 
         // initialize the client with your environment variables
-        const client = algoliasearch(
+        const searchClient = algoliasearch(
             process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
             process.env.ALGOLIA_SEARCH_ADMIN_KEY,
         );
 
+        //const searchClient = algoliasearch('QJCVSZFZ4X', 'e22c418da84d189eed2a8747674cba67');
+
         // initialize the index with your index name
-        const index = client.initIndex("pilot_one");
+        const index = searchClient.initIndex("pilot_one");
 
         // save the objects!
         const algoliaResponse = await index.saveObjects(transformed);

@@ -5,7 +5,12 @@ import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-hooks-web';
 //import CustomSearchBox from "./CustomSearchBox";
 //import CustomHits from "./CustomHits";
 
-const searchClient = algoliasearch('QJCVSZFZ4X', '71550b670439305fc4af697514f69728');
+// const searchClient = algoliasearch('QJCVSZFZ4X', '71550b670439305fc4af697514f69728');
+
+const searchClient = algoliasearch(
+  process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
+  process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY,
+);
 
 function Hit({ hit }) {
     return (
