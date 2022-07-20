@@ -31,6 +31,8 @@
     "react-instantsearch-hooks-web": "^6.30.1"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.18.9",
+    "@babel/plugin-syntax-import-assertions": "^7.18.6",
     "@prismicio/types": "^0.1.29",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "autoprefixer": "^10.4.7",

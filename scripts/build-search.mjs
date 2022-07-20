@@ -3,7 +3,9 @@ import dotenv from "dotenv";
 import algoliasearch from "algoliasearch";
 import fetch from 'node-fetch';
 import * as prismic from '@prismicio/client';
-import sm from "../sm.json" assert { type: 'json' };
+import * as fs from 'fs';
+const sm_utf = fs.readFileSync('./sm.json', 'utf8');
+const sm = JSON.parse(sm_utf);
 
 const accessToken = ''
 const routes = [
