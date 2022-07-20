@@ -38,47 +38,46 @@ async function getAllBlogPosts() {
     return articles;
 }
 
-
 function transformPostsToSearchObjects(posts) {
     const transformed = posts.map((post) => {
-      return {
-        objectID: post.id,
-        title: post.data.title[0].text,
-        slug: post.uid,
-        date: post.last_publication_date,
-        type: post.type,
-      };
+        return {
+            objectID: post.id,
+            title: post.data.title[0].text,
+            slug: post.uid,
+            date: post.last_publication_date,
+            type: post.type,
+        };
     });
-  
+
     return transformed;
-  }
+}
 
 (async function () {
-  dotenv.config();
+    dotenv.config();
 
-  try {
-    const posts = await getAllBlogPosts();
-    const transformed = transformPostsToSearchObjects(posts);
+    try {
+        const posts = await getAllBlogPosts();
+        const transformed = transformPostsToSearchObjects(posts);
 
-    // initialize the client with your environment variables
-    const client = algoliasearch(
-       process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
-       process.env.ALGOLIA_SEARCH_ADMIN_KEY,
-     );
+        // initialize the client with your environment variables
+        const client = algoliasearch(
+            process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
+            process.env.ALGOLIA_SEARCH_ADMIN_KEY,
+        );
 
-     // initialize the index with your index name
-     const index = client.initIndex("pilot_one");
+        // initialize the index with your index name
+        const index = client.initIndex("pilot_one");
 
-     // save the objects!
-     const algoliaResponse = await index.saveObjects(transformed);
+        // save the objects!
+        const algoliaResponse = await index.saveObjects(transformed);
 
-     // check the output of the response in the console
-     console.log(
-       `🎉 Sucessfully added ${algoliaResponse.objectIDs.length} records to Algolia search. Object IDs:\n${algoliaResponse.objectIDs.join(
-         "\n",
-       )}`,
-     );
-  } catch (error) {
-    console.log(error);
-  }
+        // check the output of the response in the console
+        console.log(
+            `🎉 Sucessfully added ${algoliaResponse.objectIDs.length} records to Algolia search. Object IDs:\n${algoliaResponse.objectIDs.join(
+                "\n",
+            )}`,
+        );
+    } catch (error) {
+        console.log(error);
+    }
 })();
