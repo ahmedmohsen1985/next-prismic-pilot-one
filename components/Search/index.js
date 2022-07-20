@@ -1,6 +1,8 @@
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-hooks-web';
 
+import { PrismicLink} from "@prismicio/react";
+import * as prismicH from "@prismicio/helpers";
 
 //import CustomSearchBox from "./CustomSearchBox";
 //import CustomHits from "./CustomHits";
@@ -14,7 +16,11 @@ const searchClient = algoliasearch(
 
 function Hit({ hit }) {
     return (
-      <h1>{hit.title}</h1>
+      <h1>
+        <PrismicLink href={`/articles/${hit.slug}`}>
+            {hit.title}
+        </PrismicLink>
+      </h1>
     );
   }
 
