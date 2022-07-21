@@ -5,6 +5,8 @@ import { PrismicNextImage } from "@prismicio/next";
 import { Bounded } from "./Bounded";
 import { Heading } from "./Heading";
 import { HorizontalDivider } from "./HorizontalDivider";
+import {useEffect} from "react"
+import {themeChange} from "theme-change";
 
 const Profile = ({ name, description, profilePicture }) => {
   return (
@@ -45,7 +47,7 @@ const Profile = ({ name, description, profilePicture }) => {
 
 const NavItem = ({ children }) => {
   return (
-    <li className="font-semibold tracking-tight text-slate-800">{children}</li>
+    <li className="font-semibold tracking-tight text-slate-800 flex items-center">{children}</li>
   );
 };
 
@@ -55,6 +57,18 @@ export const Header = ({
   navigation,
   settings,
 }) => {
+
+  const themeValues = [
+    "Dark",
+    "Light",
+  ]
+  
+  
+  useEffect(()=> {
+    themeChange(false)
+  });
+
+
   return (
     <Bounded as="header">
       <div className="grid grid-cols-1 justify-items-center gap-20">
@@ -72,8 +86,14 @@ export const Header = ({
                 </PrismicLink>
               </NavItem>
             ))}
+            <select className="select select-bordered" data-choose-theme>
+              {themeValues.map((value) => (
+                <option className="" key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
+              ))}
+            </select>
           </ul>
         </nav>
+        
         {withProfile && (
           <Profile
             name={settings.data.name}

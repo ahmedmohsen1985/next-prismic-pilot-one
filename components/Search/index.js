@@ -1,6 +1,7 @@
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-hooks-web';
 import { PrismicLink} from "@prismicio/react";
+import 'instantsearch.css/themes/satellite.css';
 
 //import CustomSearchBox from "./CustomSearchBox";
 //import CustomHits from "./CustomHits";
@@ -13,7 +14,7 @@ const searchClient = algoliasearch(
 function Hit({ hit }) {
     return (
       <div>
-        <h1 className="font-serif text-2xl italic leading-normal tracking-tight text-slate-500 border-b-[1px] pt-5 pb-5">
+        <h1 className="font-serif text-2xl italic leading-normal tracking-tight text-slate-500 pt-5 pb-5">
           <PrismicLink href={`/articles/${hit.slug}`}>
               {hit.title}
           </PrismicLink>
@@ -29,11 +30,10 @@ export const Search = ({ }) => {
           <InstantSearch indexName="pilot_one" searchClient={searchClient}>
             <SearchBox
                 classNames={{
-                root: 'p-3',
-                form: 'relative',
-                input: 'block w-full pl-9 pr-3 py-2 bg-white border border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 rounded-md focus:ring-1',
-                submitIcon: 'absolute top-0 left-3 bottom-0 w-4 h-10',
-                resetIcon: 'absolute top-0 right-3 bottom-0 w-4 h-10 hidden',
+                  root: '',
+                  form: 'relative',
+                  input: 'block w-full pl-9 pr-3 py-2 bg-white border border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 rounded-md focus:ring-1',
+                  submitIcon: 'absolute top-0 left-0 bottom-0 w-6',
                 }}
             />
             <Hits hitComponent={Hit} />

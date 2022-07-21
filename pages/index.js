@@ -50,17 +50,17 @@ const Article = ({ article }) => {
 
   return (
     <li className="grid grid-cols-1 items-start gap-6 md:grid-cols-3 md:gap-8">
-      <PrismicLink document={article} tabIndex="-1">
-        <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
-          {prismicH.isFilled.image(featuredImage) && (
-            <PrismicNextImage
-              field={featuredImage}
-              layout="fill"
-              className="object-cover"
-            />
-          )}
-        </div>
-      </PrismicLink>
+      <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
+        <PrismicLink document={article} tabIndex="-1">
+            {prismicH.isFilled.image(featuredImage) && (
+              <PrismicNextImage
+                field={featuredImage}
+                layout="fill"
+                className="object-cover"
+              />
+            )}
+        </PrismicLink>
+      </div>
       <div className="grid grid-cols-1 gap-3 md:col-span-2">
         <Heading as="h2">
           <PrismicLink document={article}>

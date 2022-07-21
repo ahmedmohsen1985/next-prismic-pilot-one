@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+[data-theme="dark"] a, [data-theme="dark"] h2, [data-theme="dark"] h1, [data-theme="dark"] div, [data-theme="dark"] h3, [data-theme="dark"] h4 {
+    color: #ffffff;
+}
+[data-theme="dark"] select{
+    color: #ffffff;
+}
+[data-theme="dark"] .ais-SearchBox-input {
+
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 5%), 0 1px 3px 0 rgb(255 255 255 / 15%);
+}
+[data-theme="dark"] .ais-Hits-item {
+    background: #2a303c;
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 5%), 0 1px 3px 0 rgb(255 255 255 / 15%);
+}
+[data-theme="dark"]  p {
+    color: #999;
+}
+[data-theme="dark"]  code {
+    color: #000;
+}
+[data-theme="dark"] .ais-SearchBox-submitIcon path{
+    color: #fff;
+}
+[data-theme="retro"] select {
+    background: #e4d8b4;
+}

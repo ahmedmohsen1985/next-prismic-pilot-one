@@ -13,6 +13,7 @@ import { Heading } from "../components/Heading";
 
 
 
+
 const NextLinkShim = ({ href, children, locale, ...props }) => {
   return (
     <Link href={href} locale={locale}>
@@ -69,6 +70,9 @@ const richTextComponents = {
 };
 
 export default function App({ Component, pageProps }) {
+
+  
+
   return (
     <PrismicProvider
       linkResolver={linkResolver}
