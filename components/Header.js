@@ -59,8 +59,8 @@ export const Header = ({
 }) => {
 
   const themeValues = [
-    "Dark",
     "Light",
+    "Dark",
   ]
   
   
