@@ -87,6 +87,7 @@ export const Header = ({
               </NavItem>
             ))}
             <select className="select select-bordered" data-choose-theme>
+            
               {themeValues.map((value) => (
                 <option className="" key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
               ))}
