@@ -33,7 +33,7 @@ const searchClient = {
 function Hit({ hit }) {
     return (
       <div>
-        <h1 className="font-serif text-2xl italic leading-normal tracking-tight text-slate-500 pt-5 pb-5">
+        <h1 className="font-serif text-2xl italic leading-normal tracking-tight primary-content pt-5 pb-5">
           <PrismicLink href={`/articles/${hit.slug}`}>
               {hit.title}
           </PrismicLink>

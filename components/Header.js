@@ -34,7 +34,7 @@ const Profile = ({ name, description, profilePicture }) => {
               </Heading>
             )}
             {prismicH.isFilled.richText(description) && (
-              <p className="font-serif text-2xl italic leading-normal tracking-tight text-slate-500">
+              <p className="font-serif text-2xl italic leading-normal tracking-tight primary-content">
                 <PrismicText field={description} />
               </p>
             )}
@@ -47,7 +47,7 @@ const Profile = ({ name, description, profilePicture }) => {
 
 const NavItem = ({ children }) => {
   return (
-    <li className="font-semibold tracking-tight text-slate-800 flex items-center">{children}</li>
+    <li className="font-semibold tracking-tight primary-content flex items-center">{children}</li>
   );
 };
 
@@ -87,9 +87,9 @@ export const Header = ({
               </NavItem>
             ))}
             <select className="select select-bordered" data-choose-theme>
-            
+              <option value="" >Default</option>
               {themeValues.map((value) => (
-                <option className="" key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
+                <option key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
               ))}
             </select>
           </ul>
