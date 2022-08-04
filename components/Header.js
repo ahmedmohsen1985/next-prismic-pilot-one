@@ -1,46 +1,20 @@
 import * as prismicH from "@prismicio/helpers";
 import { PrismicLink, PrismicText } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
-
 import { Bounded } from "./Bounded";
 import { Heading } from "./Heading";
 import { HorizontalDivider } from "./HorizontalDivider";
-import {useEffect} from "react"
-import {themeChange} from "theme-change";
+import { useEffect } from "react"
+import { themeChange } from "theme-change";
+import { Search } from "./Search";
 
-const Profile = ({ name, description, profilePicture }) => {
+const LogoName = ({ name }) => {
   return (
-    <div className="px-4">
-      <div className="grid max-w-lg grid-cols-1 justify-items-center gap-8">
-        <PrismicLink href="/" tabIndex="-1">
-          <div className="relative h-40 w-40 overflow-hidden rounded-full bg-slate-300">
-            {prismicH.isFilled.image(profilePicture) && (
-              <PrismicNextImage
-                field={profilePicture}
-                layout="fill"
-                className="object-cover"
-              />
-            )}
-          </div>
+    <div>
+      <Heading>
+        <PrismicLink href="/">
+          <PrismicText field={name} />
         </PrismicLink>
-        {(prismicH.isFilled.richText(name) ||
-          prismicH.isFilled.richText(description)) && (
-          <div className="grid grid-cols-1 gap-2 text-center">
-            {prismicH.isFilled.richText(name) && (
-              <Heading>
-                <PrismicLink href="/">
-                  <PrismicText field={name} />
-                </PrismicLink>
-              </Heading>
-            )}
-            {prismicH.isFilled.richText(description) && (
-              <p className="font-serif text-2xl italic leading-normal tracking-tight primary-content">
-                <PrismicText field={description} />
-              </p>
-            )}
-          </div>
-        )}
-      </div>
+      </Heading>
     </div>
   );
 };
@@ -52,27 +26,40 @@ const NavItem = ({ children }) => {
 };
 
 export const Header = ({
-  withDivider = true,
-  withProfile = true,
+  withDivider = false,
+  // withProfile = true,
   navigation,
   settings,
+
 }) => {
 
   const themeValues = [
     "Light",
     "Dark",
   ]
-  
-  
-  useEffect(()=> {
+
+
+  useEffect(() => {
     themeChange(false)
   });
 
 
   return (
     <Bounded as="header">
-      <div className="grid grid-cols-1 justify-items-center gap-20">
-        <nav>
+      <div className="grid grid-cols-1 justify-items-end gap-10">
+        <div className="flex w-full justify-between border border-slate-200 p-1 rounded-xl bg-base-200">
+          <Search />
+          <select className="select select-bordered" data-choose-theme>
+              <option value="" >Default</option>
+              {themeValues.map((value) => (
+                <option key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
+              ))}
+            </select>
+        </div>
+        <nav className="flex w-full justify-between">
+          <LogoName
+            name={settings.data.name}
+          />
           <ul className="flex flex-wrap justify-center gap-10">
             <NavItem>
               <PrismicLink href="/">
@@ -86,22 +73,8 @@ export const Header = ({
                 </PrismicLink>
               </NavItem>
             ))}
-            <select className="select select-bordered" data-choose-theme>
-              <option value="" >Default</option>
-              {themeValues.map((value) => (
-                <option key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
-              ))}
-            </select>
           </ul>
         </nav>
-        
-        {withProfile && (
-          <Profile
-            name={settings.data.name}
-            description={settings.data.description}
-            profilePicture={settings.data.profilePicture}
-          />
-        )}
         {withDivider && <HorizontalDivider />}
       </div>
     </Bounded>

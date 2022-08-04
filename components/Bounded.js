@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 export const Bounded = ({
   as: Comp = "div",
-  size = "base",
+  size = "widest",
   className,
   children,
 }) => {
