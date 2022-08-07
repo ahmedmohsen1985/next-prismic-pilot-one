@@ -2,10 +2,12 @@ import { Bounded } from "../../components/Bounded";
 
 const Field = ({ label, children }) => {
   return (
-    <label>
-      <span className="text-sm text-slate-500">{label}</span>
+    <div className="form-control">
+      <label className='label'>
+        <span className="label-tex">{label}</span>
+      </label>
       {children}
-    </label>
+    </div>
   );
 };
 
@@ -23,7 +25,7 @@ const InputField = ({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full rounded-none border-b border-slate-200 py-3 pr-7 pl-3 primary-content placeholder-slate-400"
+        className="input input-bordered w-full"
       />
     </Field>
   );
@@ -36,7 +38,7 @@ const TextareaField = ({ label, name, placeholder, required = true }) => {
         name={name}
         required={required}
         placeholder={placeholder}
-        className="h-40 w-full rounded-none border-b border-slate-200 py-3 pr-7 pl-3 primary-content placeholder-slate-400"
+        className="textarea textarea-bordered h-24 w-full"
       />
     </Field>
   );
@@ -48,7 +50,7 @@ const ContactForm = () => {
       <form
         action="/api/contact"
         method="post"
-        className="grid grid-cols-1 gap-6"
+        className="form-control"
       >
         <InputField label="Name" name="name" placeholder="Jane Doe" />
         <InputField
@@ -64,12 +66,9 @@ const ContactForm = () => {
         />
         <button
           type="submit"
-          className="ml-auto inline-flex items-center gap-2"
+          className="btn btn-wide mt-4 my-0 mx-auto"
         >
           Send message{" "}
-          <span aria-hidden={true} className="text-xl">
-            &rarr;
-          </span>
         </button>
       </form>
     </Bounded>
