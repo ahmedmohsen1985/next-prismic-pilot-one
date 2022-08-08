@@ -93,7 +93,7 @@ const Index = ({ articles, navigation, settings }) => {
       </Head>
 
       <Bounded size="widest">
-        <ul className="grid grid-cols-2 gap-16">
+        <ul className="grid grid-cols-1 gap-16 lg:grid-cols-2">
           {articles.map((article) => (
             <Article key={article.id} article={article} />
           ))}

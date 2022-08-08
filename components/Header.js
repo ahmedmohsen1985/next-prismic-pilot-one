@@ -56,11 +56,11 @@ export const Header = ({
               ))}
             </select>
         </div>
-        <nav className="flex w-full justify-between">
+        <nav className="flex w-full flex-col text-center lg:text-left lg:justify-between lg:flex-row">
           <LogoName
             name={settings.data.name}
           />
-          <ul className="flex flex-wrap justify-center gap-10">
+          <ul className="flex flex-wrap justify-center gap-10 mt-5 lg:mt-0">
             <NavItem>
               <PrismicLink href="/">
                 <PrismicText field={navigation.data.homepageLabel} />

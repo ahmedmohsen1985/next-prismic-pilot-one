@@ -52,14 +52,7 @@ const Article = ({ article, latestArticles, navigation, settings }) => {
           {/* {prismicH.asText(article.data.title)} | {" "} {prismicH.asText(settings.data.name)} */}
         </title>
       </Head>
-      <Bounded>
-        <PrismicLink
-          href="/"
-          className="font-semibold tracking-tight text-slate-400"
-        >
-          &larr; Back to articles
-        </PrismicLink>
-      </Bounded>
+      
       <article>
         <Bounded className="pb-0">
           <h1 className="mb-3 text-3xl font-semibold tracking-tighter primary-content md:text-4xl">
@@ -71,6 +64,14 @@ const Article = ({ article, latestArticles, navigation, settings }) => {
         </Bounded>
         <SliceZone slices={article.data.slices} components={components} />
       </article>
+      <Bounded>
+        <PrismicLink
+          href="/"
+          className="font-semibold tracking-tight text-slate-400"
+        >
+          &larr; Back to articles
+        </PrismicLink>
+      </Bounded>
       {latestArticles.length > 0 && (
         <Bounded>
           <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
